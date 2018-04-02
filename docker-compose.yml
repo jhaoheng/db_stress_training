@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    ports:
+      - 3306:3306/tcp
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      # 依照 字母順序 依序執行，不能用數字
+      - ./schema.sql:/docker-entrypoint-initdb.d/base_schema.sql
+  app:
+    image: jhaoheng/nginx-php7.0:latest
+    container_name: app
+    volumes:
+      - ./app:/usr/share/nginx/html/app
+      - ./nginx/sites-enabled/:/etc/nginx/sites-enabled/
+    ports:
+      - 80:80/tcp
+    working_dir: /usr/share/nginx/html/app
+    entrypoint: sh -c "php-fpm; nginx -g 'daemon off;'"
