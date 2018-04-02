@@ -1,5 +1,4 @@
 <?php  
-include_once BASE_PATH."/MYSQL_MANAGER.php";
 use Phalcon\Db\Adapter\Pdo\Mysql;
 
 /*
@@ -64,13 +63,13 @@ function stress_4($app){
 
 $database = (array)$app->config->database;
 
-stress_1($database);
+// stress_1($database);
 
 // stress_2($database);
 
 // stress_3();
 
-// stress_4($app);
+stress_4($app);
 
 
 

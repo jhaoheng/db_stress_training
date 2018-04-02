@@ -1,5 +1,6 @@
 <?php
 
+
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Micro;
 
@@ -7,6 +8,8 @@ error_reporting(E_ALL);
 
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
+
+include_once BASE_PATH."/MYSQL_MANAGER.php";
 
 try {
 

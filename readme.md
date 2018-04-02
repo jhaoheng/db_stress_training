@@ -23,5 +23,5 @@
 2. check, 'http://localhost/info' will show phpinfo()
 3. open `app/stress.php`, 確定使用哪種方式連線資料庫
 4. 執行 
-  - vegeta : `echo "GET http://127.0.0.1/v1.2" | vegeta attack -rate=300 -duration=10s | vegeta report`
-  - apachebench : `ab -n 300 -c 20 -t 10 http://127.0.0.1`
+  - vegeta : `echo "GET http://127.0.0.1/stress" | vegeta attack -rate=300 -duration=10s | vegeta report`
+  - apachebench : `ab -n 300 -c 20 -t 10 http://127.0.0.1/stress`
